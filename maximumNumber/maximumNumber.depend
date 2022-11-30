@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1669290381 source:/home/hinn/Documents/C programs/maximumNumber/main.c
+	<stdio.h>
+	<stdlib.h>
+

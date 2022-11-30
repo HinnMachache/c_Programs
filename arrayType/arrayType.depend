@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1669750222 source:/home/hinn/Documents/C programs/arrayType/main.c
+	<stdio.h>
+	<stdlib.h>
+

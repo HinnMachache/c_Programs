@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1669562299 source:/home/hinn/Documents/C programs/functionCategory/main.c
+	<stdio.h>
+	<stdlib.h>
+
