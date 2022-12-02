@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1669982625 source:/home/hinn/Documents/C_programs/matrixProgram/main.c
+	<stdio.h>
+	<stdlib.h>
+
