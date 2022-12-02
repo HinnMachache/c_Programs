@@ -20,24 +20,30 @@ int main(void)
 
 int matrix(void)
 {
-    int matrix[2][3], counter1, counter2, sum = 0;
+    #define Size 100
+    int matrix[Size][Size], row, column, rowCounter, columnCounter, sum = 0;
 
+    printf("Enter row size: ");
+    scanf("%d", &row);
+    printf("Enter column size: ");
+    scanf("%d", &column);
     printf("Enter Matrix elements: \n");
-    for (counter1 = 0; counter1 < 2; counter1++)
+    for (rowCounter = 0; rowCounter < row; rowCounter++)
     {
-        for (counter2 = 0; counter2 < 3; counter2++)
+        for (columnCounter = 0; columnCounter < column; columnCounter++)
         {
-            scanf("%d", &matrix[counter1][counter2]);
+            scanf("%d", &matrix[rowCounter][columnCounter]);
         }
     }
 
     printf("\n");
-    for (counter1 = 0; counter1 < 2; counter1++)
+    printf("Matrix:\n");
+    for (rowCounter = 0; rowCounter < row; rowCounter++)
     {
-        for (counter2 = 0; counter2 < 3; counter2++)
+        for (columnCounter = 0; columnCounter < column; columnCounter++)
         {
-            printf("%d\t", matrix[counter1][counter2]);
-            sum += matrix[counter1][counter2];
+            printf("%d\t", matrix[rowCounter][columnCounter]);
+            sum += matrix[rowCounter][columnCounter];
         }
         printf("\n");
     }
@@ -51,12 +57,17 @@ int matrix(void)
 
 int matrixTranspose(void)
 {
-    int matrix[2][3], rowCounter, columnCounter;
+    #define Size 100
+    int matrix[Size][Size], row, column, rowCounter, columnCounter;
 
+    printf("Enter row size: ");
+    scanf("%d", &row);
+    printf("Enter column size: ");
+    scanf("%d", &column);
     printf("Enter elements of the matrix: \n");
-    for (rowCounter = 0; rowCounter < 2; rowCounter++)
+    for (rowCounter = 0; rowCounter < row; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column; columnCounter++)
         {
             scanf("%d", &matrix[rowCounter][columnCounter]);
         }
@@ -64,9 +75,9 @@ int matrixTranspose(void)
 
     printf("\n");
     printf("Matrix: \n");
-    for (rowCounter = 0; rowCounter < 2; rowCounter++)
+    for (rowCounter = 0; rowCounter < row; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column; columnCounter++)
         {
             printf("%d\t", matrix[rowCounter][columnCounter]);
         }
@@ -75,9 +86,9 @@ int matrixTranspose(void)
 
     printf("\n");
     printf("Transpose of the matrix: \n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < column; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 2; columnCounter++)
+        for (columnCounter = 0; columnCounter < row; columnCounter++)
         {
             printf("%d\t", matrix[columnCounter][rowCounter]);
         }
@@ -89,13 +100,19 @@ int matrixTranspose(void)
 
 int addMatrixElements(void)
 {
-    int matrix[3][3], rowCounter, columnCounter, sum_Row, sum_Column;
+    #define Size 100
+    int row, column, matrix[Size][Size], rowCounter, columnCounter, sum_Row, sum_Column;
 
+
+    printf("Enter row size: ");
+    scanf("%d", &row);
+    printf("Enter column size: ");
+    scanf("%d", &column);
     printf("Enter Matrix Elements: \n");
 
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < row; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column; columnCounter++)
         {
             scanf("%d", &matrix[rowCounter][columnCounter]);
         }
@@ -103,9 +120,9 @@ int addMatrixElements(void)
 
     printf("\n");
     printf("Matrix: \n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < row; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column; columnCounter++)
         {
             printf("%d\t", matrix[rowCounter][columnCounter]);
         }
@@ -114,10 +131,10 @@ int addMatrixElements(void)
 
     printf("\n");
     printf("----------Adding Elements---------------\n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < row; rowCounter++)
     {
         sum_Row = sum_Column = 0;
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column; columnCounter++)
         {
             sum_Row += matrix[rowCounter][columnCounter];
             sum_Column += matrix[columnCounter][rowCounter];
@@ -129,24 +146,33 @@ int addMatrixElements(void)
 
 int matrixAddition(void)
 {
-    int matrixA[3][3], matrixB[3][3], matrixC[3][3], rowCounter, columnCounter;
+    #define Size 100
+    int matrixA[Size][Size], matrixB[Size][Size], matrixC[Size][Size], row1, column1, row2, column2, rowCounter, columnCounter;
 
+    printf("Enter row size: ");
+    scanf("%d", &row1);
+    printf("Enter column size: ");
+    scanf("%d", &column1);
     printf("Enter Matrix A Elements: \n");
 
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < row1; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column1; columnCounter++)
         {
             scanf("%d", &matrixA[rowCounter][columnCounter]);
         }
     }
 
     printf("\n");
+    printf("Enter row size: ");
+    scanf("%d", &row2);
+    printf("Enter column size: ");
+    scanf("%d", &column2);
     printf("Enter Matrix B Elements: \n");
 
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < row2; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column2; columnCounter++)
         {
             scanf("%d", &matrixB[rowCounter][columnCounter]);
         }
@@ -155,9 +181,9 @@ int matrixAddition(void)
 
     printf("\n");
     printf("Matrix A:\n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < row1; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column1; columnCounter++)
         {
             printf("%d\t", matrixA[rowCounter][columnCounter]);
         }
@@ -166,9 +192,9 @@ int matrixAddition(void)
 
     printf("\n");
     printf("Matrix B:\n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < row2; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < column2; columnCounter++)
         {
             printf("%d\t", matrixB[rowCounter][columnCounter]);
         }
@@ -178,9 +204,9 @@ int matrixAddition(void)
     printf("\n");
     printf("--------------Adding Elements------------------\n");
     printf("Matrix C:\n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < (row1+row2); rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < (column1+column2); columnCounter++)
         {
             matrixC[rowCounter][columnCounter] = matrixA[rowCounter][columnCounter] + matrixB[rowCounter][columnCounter];
             printf("%d\t", matrixC[rowCounter][columnCounter]);
@@ -194,35 +220,28 @@ int matrixAddition(void)
 
 int matrixProduct(void)
 {
-    int matrixA[3][3], matrixB[3][2], matrixC[3][2], sum, rowCounter, columnCounter, innerCounter;
+    #define Size 50
+    int matrixA[Size][Size], matrixB[Size][Size], matrixC[Size][Size], rowA, columnA, rowB, columnB, sum, rowCounter, columnCounter, innerCounter;
 
+    printf("Enter row size: ");
+    scanf("%d", &rowA);
+    printf("Enter column size: ");
+    scanf("%d", &columnA);
     printf("Enter Matrix A Elements: \n");
 
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < rowA; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < columnA; columnCounter++)
         {
             scanf("%d", &matrixA[rowCounter][columnCounter]);
         }
     }
 
     printf("\n");
-    printf("Enter Matrix B Elements: \n");
-
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
-    {
-        for (columnCounter = 0; columnCounter < 2; columnCounter++)
-        {
-            scanf("%d", &matrixB[rowCounter][columnCounter]);
-        }
-    }
-
-
-    printf("\n");
     printf("Matrix A:\n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < rowA; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < columnA; columnCounter++)
         {
             printf("%d\t", matrixA[rowCounter][columnCounter]);
         }
@@ -230,43 +249,65 @@ int matrixProduct(void)
     }
 
     printf("\n");
-    printf("Matrix B:\n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    printf("Enter row size: ");
+    scanf("%d", &rowB);
+    printf("Enter column size: ");
+    scanf("%d", &columnB);
+    printf("Enter Matrix B Elements: \n");
+
+    for (rowCounter = 0; rowCounter < rowB; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 2; columnCounter++)
+        for (columnCounter = 0; columnCounter < columnB; columnCounter++)
+        {
+            scanf("%d", &matrixB[rowCounter][columnCounter]);
+        }
+    }
+
+    printf("\n");
+    printf("Matrix B:\n");
+    for (rowCounter = 0; rowCounter < rowB; rowCounter++)
+    {
+        for (columnCounter = 0; columnCounter < columnB; columnCounter++)
         {
             printf("%d\t", matrixB[rowCounter][columnCounter]);
         }
         printf("\n");
     }
 
+    if (columnA != rowB)
+    {
+        printf("\nCould not Multiply!\n");
+        printf("Number of columns of first matrix must match number of columns of second matrix.\n");
+    }
+    else
+    {
     printf("\n");
     printf("--------------Multiplying Elements------------------\n");
 
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < rowA; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 2; columnCounter++)
+        for (columnCounter = 0; columnCounter < columnB; columnCounter++)
         {
             sum = 0;
 
-            for (innerCounter = 0; innerCounter < 3; innerCounter++)
+            for (innerCounter = 0; innerCounter < rowA; innerCounter++)
             {
                 sum += ((matrixA[rowCounter][innerCounter]) * (matrixB[innerCounter][columnCounter]));
             }
                 matrixC[rowCounter][columnCounter] = sum;
         }
     }
-
     printf("\n");
     printf("Matrix C:\n");
-    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    for (rowCounter = 0; rowCounter < rowA; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 2; columnCounter++)
+        for (columnCounter = 0; columnCounter < columnB; columnCounter++)
         {
             printf("%d\t", matrixC[rowCounter][columnCounter]);
         }
         printf("\n");
     }
+}
 
 
     return;
