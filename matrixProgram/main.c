@@ -194,7 +194,7 @@ int matrixAddition(void)
 
 int matrixProduct(void)
 {
-    int matrixA[3][3], matrixB[3][2], matrixC[3][2], rowCounter, columnCounter;
+    int matrixA[3][3], matrixB[3][2], matrixC[3][2], sum, rowCounter, columnCounter, innerCounter;
 
     printf("Enter Matrix A Elements: \n");
 
@@ -233,7 +233,7 @@ int matrixProduct(void)
     printf("Matrix B:\n");
     for (rowCounter = 0; rowCounter < 3; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < 2; columnCounter++)
         {
             printf("%d\t", matrixB[rowCounter][columnCounter]);
         }
@@ -242,16 +242,32 @@ int matrixProduct(void)
 
     printf("\n");
     printf("--------------Multiplying Elements------------------\n");
+
+    for (rowCounter = 0; rowCounter < 3; rowCounter++)
+    {
+        for (columnCounter = 0; columnCounter < 2; columnCounter++)
+        {
+            sum = 0;
+
+            for (innerCounter = 0; innerCounter < 3; innerCounter++)
+            {
+                sum += ((matrixA[rowCounter][innerCounter]) * (matrixB[innerCounter][columnCounter]));
+            }
+                matrixC[rowCounter][columnCounter] = sum;
+        }
+    }
+
+    printf("\n");
     printf("Matrix C:\n");
     for (rowCounter = 0; rowCounter < 3; rowCounter++)
     {
-        for (columnCounter = 0; columnCounter < 3; columnCounter++)
+        for (columnCounter = 0; columnCounter < 2; columnCounter++)
         {
-            matrixC[rowCounter][columnCounter] = matrixA[rowCounter][columnCounter] * matrixB[rowCounter][columnCounter];
             printf("%d\t", matrixC[rowCounter][columnCounter]);
         }
         printf("\n");
     }
+
 
     return;
 }
