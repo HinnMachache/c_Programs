@@ -18,6 +18,12 @@ int continueTransaction;
 int amount;
 float a, b, c, d, e, f, g, h, i, q, deposit, transfer, withdraw = 0;
 
+int main()
+{
+  printf("\t\t\t\t\tWELCOME TO DEKUT ATM SYSTEM\n");
+  Password();
+}
+
 void Password() // Allows for first login attempt
 {
   system("color 70");
@@ -40,13 +46,11 @@ void Password() // Allows for first login attempt
   }
 }
 
-
 void passwordr2()
 {
   printf("INCORRECT.TWO REMAINING ATTEMPTS.\n");
   passwordr3(); // allows for second login attempt
 }
-
 
 void passwordr3()
 {
@@ -67,9 +71,7 @@ void passwordr3()
     printf("INCORRECT.ONE REMAINING ATTEMPT.\n");
     password3(); // allows for third and final login attempt
   }
-
 }
-
 
 void password3()
 {
@@ -88,13 +90,6 @@ void password3()
   {
     printf("DEAR USER, YOU HAVE EXHAUSTED YOUR NUMBER OF LOGIN ATTEMPTS.YOU CANNOT ACCESS YOUR ACCOUNT.\n");
   }
-}
-
-
-int main()
-{
-  printf("\t\t\t\t\tWELCOME TO DEKUT ATM SYSTEM\n");
-  Password();
 }
 
 void logout(void) // LOG OUT MENU
@@ -119,7 +114,6 @@ void logout(void) // LOG OUT MENU
     logout(); // prompts user again for appropriate choice
   }
 }
-
 
 void ATM_Interface()
 {
