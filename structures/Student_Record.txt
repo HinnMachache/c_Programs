@@ -1,10 +1,15 @@
 Student_Id	 Student_Name	 Student_Age
-0	 		Dad	 		        45
-1	 		Mum	 		        38
-2	 		Powell	 	    	20
-3	 		Benny	 	    	19
-4	 		Kerry	 	    	14
-5	 		Melchizz	   		14
+0	 			 		32714
+1	 			 		0
+2	 			 		0
+3	 			 		32767
+4	 			 		0
+5	 			 		0
+6	 			 		0
+7	 			 		0
+8	 			 		21873
+9	 		\Ë∆M 	 		0
+4
 6	 		Telford	 		    12
 7	 		Afrine	 		    1
 8	 		Machache	 		10
