@@ -38,5 +38,5 @@ int func2(int num)
     if (num <= 1)
         return (1);
     else
-        return (num * func1(num));
+        return (num * func1(num -1 ));
 }

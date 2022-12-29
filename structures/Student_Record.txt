@@ -1,16 +1,12 @@
 Student_Id	 Student_Name	 Student_Age
-0	 			 		32714
-1	 			 		0
-2	 			 		0
-3	 			 		32767
-4	 			 		0
-5	 			 		0
-6	 			 		0
-7	 			 		0
-8	 			 		21873
-9	 		\èÆMÊ	 		0
-4
-6	 		Telford	 		    12
-7	 		Afrine	 		    1
-8	 		Machache	 		10
-9	 		Ndolo	 		    29
+0	 		Hinn	 		17
+1	 		Hinn	 		28
+2	 		beny	 		36
+3	 		Hinn	 		22
+4	 		Hinn	 		26
+
+The sum of age -> 85
+The oldest student -> 
+ Hinn 17
+The youngest student -> 
+ Hinn 17
