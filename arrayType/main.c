@@ -10,18 +10,18 @@ int main()
     float average;
 
     sum = arrayFun();
-    average =(float) sum / 10;
+    average = (float)sum / 10;
     printf("Sum of ages = %d.\n", sum);
     printf("Average of ages = %.2f\n", average);
-    //max_min();
+    // max_min();
 
     return 0;
 }
 
 int arrayFun(void)
 {
-    int age,  noAges, counter, sum = 0, even = 0, odd = 0, max = 0, min = 0;
-    int* agePointer;
+    int age, noAges, counter, sum = 0, even = 0, odd = 0, max = 0, min = 0;
+    int *agePointer;
 
     /*
     for (counter = 0; counter < 10; counter++) //Getting the ages
@@ -31,17 +31,17 @@ int arrayFun(void)
     }
     */
 
-    printf("Enter number of ages to be inserted: ");
+    printf("Enter number of ages to be inserted:");
     scanf("%d", &noAges);
-    agePointer = (int *)calloc(noAges, sizeof(int));//Memory Allocation
-    if(agePointer == NULL)
+    agePointer = (int *)calloc(noAges, sizeof(int)); // Memory Allocation
+    if (agePointer == NULL)
     {
         printf("Memory Not allocated!");
         exit(0);
     }
     else
     {
-        for (counter = 0; counter < noAges; counter++)//Getting the ages
+        for (counter = 0; counter < noAges; counter++) // Getting the ages
         {
             printf("Enter the age: ");
             scanf("%d", (agePointer + counter));
@@ -55,10 +55,8 @@ int arrayFun(void)
     {
         printf("Age %d:-> %d.\n", counter, ages[counter]);
     }*/
-    
-    
 
-   for (counter = 0; counter < noAges; counter++)//Print from first age to last age
+    for (counter = 0; counter < noAges; counter++) // Print from first age to last age
     {
         printf("Age %d:-> %d.\n", counter, *(agePointer + counter));
     }
@@ -70,42 +68,38 @@ int arrayFun(void)
     {
         printf("Age %d:-> %d.\n", counter, ages[counter]);
     }*/
-    
 
     printf("\n");
 
-    
-    for (counter = 0; counter < noAges; counter++) //Finding the sum of ages
+    for (counter = 0; counter < noAges; counter++) // Finding the sum of ages
     {
         sum += *(agePointer + counter);
     }
-    
-    /*
-    max = min = *agePointer[0];
-    for (counter = 0; counter < 10; counter++)//Finding the even age
+
+    max = min = *(agePointer + 0);
+    for (counter = 0; counter < noAges; counter++) // Finding the even age
     {
-        if (ages[counter] % 2 == 0)
+        if (*(agePointer + counter) % 2 == 0)
         {
-        printf("Age %d is even\n", ages[counter]);
-        even +=1;
+            printf("Age %d is even\n", *(agePointer + counter));
+            even += 1;
         }
 
-        else //Finding the odd age
+        else // Finding the odd age
         {
-        printf("Age %d is odd\n", ages[counter]);
-        odd += 1;
+            printf("Age %d is odd\n", *(agePointer + counter));
+            odd += 1;
         }
 
-        if (ages[counter] > max) //Finding the greatest age
+        if (*(agePointer + counter) > max) // Finding the greatest age
         {
-            max = ages[counter];
+            max = *(agePointer + counter);
         }
 
-        if (ages[counter] < min)//Finding the minimum age
+        if (*(agePointer + counter) < min) // Finding the minimum age
         {
-            min = ages[counter];
+            min = *(agePointer + counter);
         }
-
     }
 
     printf("\n");
@@ -113,8 +107,7 @@ int arrayFun(void)
     printf("Odd elements = %d\n", odd);
     printf("\n");
     printf("Minimum age = %d\n", min);
-    printf("Maximum age = %d\n", max);*/
-    
+    printf("Maximum age = %d\n", max);
 
     printf("\n");
 
