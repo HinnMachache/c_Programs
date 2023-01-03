@@ -110,6 +110,7 @@ int arrayFun(void)
     printf("Maximum age = %d\n", max);
 
     printf("\n");
+    free(agePointer);
 
     return (sum);
 }
@@ -152,5 +153,7 @@ void max_min()
     printf("\nLowest value = %d\n", min);
     printf("Highest value = %d\n", max);
     }
+
+    free(numberPointer);
     
 }
