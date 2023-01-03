@@ -9,11 +9,11 @@ int main()
     int sum = 0;
     float average;
 
-    sum = arrayFun();
-    average = (float)sum / 10;
-    printf("Sum of ages = %d.\n", sum);
-    printf("Average of ages = %.2f\n", average);
-    // max_min();
+    //sum = arrayFun();
+    //average = (float)sum / 10;
+    //printf("Sum of ages = %d.\n", sum);
+    //printf("Average of ages = %.2f\n", average);
+     max_min();
 
     return 0;
 }
@@ -116,29 +116,41 @@ int arrayFun(void)
 
 void max_min()
 {
-    int max, min, counter, numbers[10];
+    int max, min, counter, *numberPointer, noElements;
 
-    for (counter = 0; counter < 10; counter++)
+    printf("Enter number of elements to be inserted: ");
+    scanf("%d", &noElements);
+    numberPointer = (int *)calloc(noElements, sizeof(int));
+
+    if (numberPointer == NULL)
+    {
+        printf("Memory not allocated!");
+    }
+    else
+    {
+        for (counter = 0; counter < noElements; counter++)
     {
         printf("Enter a value: ");
-        scanf("%d", &numbers[counter]);
+        scanf("%d", (numberPointer + counter));
     }
 
-    max = min = numbers[0];
+    max = min = *(numberPointer + 0);
 
-    for (counter = 0; counter < 10; counter++)
+    for (counter = 0; counter < noElements; counter++)
     {
-        if (numbers[counter] < min)
+        if (*(numberPointer + counter) < min)
         {
-            min = numbers[counter];
+            min = *(numberPointer + counter);
         }
 
-        if (numbers[counter] > max)
+        if (*(numberPointer + counter) > max)
         {
-            max = numbers[counter];
+            max = *(numberPointer + counter);
         }
     }
 
     printf("\nLowest value = %d\n", min);
     printf("Highest value = %d\n", max);
+    }
+    
 }
