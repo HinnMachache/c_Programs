@@ -4,6 +4,7 @@
 int arrayFun(void);
 void max_min(void);
 int reallocFun(void);
+int dynamicAlloc(void);
 
 int main()
 {
@@ -15,8 +16,9 @@ int main()
     // printf("Sum of ages = %d.\n", sum);
     // printf("Average of ages = %.2f\n", average);
     // max_min();
-    reallocFun();
-
+    //reallocFun();
+    dynamicAlloc();
+    
     return 0;
 }
 
@@ -163,7 +165,8 @@ void max_min(void)
 
 int reallocFun(void)
 {
-    int *agePointer, counter = 0, ans = 0, noAges, no2Ages = 0;
+    int *agePointer, counter = 0, ans = 0, no2Ages = 0;
+    static int noAges;
 
     printf("Enter number of ages to be inserted: ");
     scanf("%d", &noAges);
@@ -189,8 +192,8 @@ int reallocFun(void)
     if (ans == 1)
     {
         printf("Enter number of ages to be added: ");
-        scanf("%d", &no2Ages);
-        agePointer = realloc(agePointer, no2Ages * sizeof(int));
+        scanf("%d", &noAges);
+        agePointer = realloc(agePointer, noAges * sizeof(int));
 
         if (agePointer == NULL)
         {
@@ -200,7 +203,7 @@ int reallocFun(void)
         else
         {
             counter = 0;
-            while (counter < no2Ages)
+            while (counter < noAges)
             {
                 printf("Enter age: ");
                 scanf("%d", (agePointer + counter));
@@ -213,11 +216,71 @@ int reallocFun(void)
         printf("\nExiting the program!\n");
     }
 
-    for (counter = 0; counter < (noAges + no2Ages); counter++) // Print from first age to last age
+    for (counter = 0; counter < (noAges); counter++) // Print from first age to last age
     {
         printf("Age %d:-> %d.\n", counter, *(agePointer + counter));
     }
 
     free(agePointer);
     printf("\n");
+}
+
+int dynamicAlloc(void)
+{
+    int *agePointer, counter = 0, ans = 0, noAges2, noAges1;
+    
+
+    printf("Enter number of ages to be inserted: ");
+    scanf("%d", &noAges1);
+    agePointer = (int *)calloc(noAges1, sizeof(int)); // Memory Allocation
+    if (agePointer == NULL)
+    {
+        printf("Memory Not allocated!");
+        exit(0);
+    }
+    else
+    {
+        while (counter < noAges1)
+        {
+            printf("Enter age: ");
+            scanf("%d", (agePointer + counter));
+            counter++;
+        }
+    }
+
+    /*
+    for (counter = 0; counter < noAges1; counter++) // Print from first age to last age
+    {
+        printf("Age %d:-> %d.\n", counter, *(agePointer + counter));
+    }*/
+    
+
+    printf("Enter new number of ages to be inserted: ");
+    scanf("%d", &noAges1);
+    agePointer = (int *)realloc(agePointer, noAges1 * sizeof(int));
+
+    /*
+    if (agePointer == NULL)
+    {
+        printf("Error allocating memory\n");
+    }
+    else
+    {
+        printf("Memory allocated succesfully\n");
+    }
+    */
+    
+    for (counter = 0; counter < noAges1; counter++)
+    {
+        printf("Enter age: ");
+        scanf("%d", (agePointer + counter));
+    }
+    
+    for (counter = 0; counter < noAges1; counter++) // Print from first age to last age
+    {
+        printf("Age %d:-> %d.\n", counter, *(agePointer + counter));
+    }
+
+    free(agePointer);
+    
 }
